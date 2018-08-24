@@ -1,0 +1,5 @@
+C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\bin\Debug\Controllers.dll
+C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\bin\Debug\Controllers.pdb
+C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\obj\Debug\Controllers.csprojResolveAssemblyReference.cache
+C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\obj\Debug\Controllers.dll
+C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\obj\Debug\Controllers.pdb
