@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <!--<RowDefinition Height="1*"/>-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="86*"/>
+            <ColumnDefinition Width="336*"/>
+            <ColumnDefinition Width="95*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Efetuar Vendas" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="CPF" HorizontalAlignment="Left" Margin="7,7,42,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Codigo" HorizontalAlignment="Left" Margin="7,7,23,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Quantidade" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+            <Button Content="Finalizar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75"/>
+
+        </StackPanel>
+
+
+
+
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="10" Grid.Column="0" Margin="6,16,6,15">
+            <Button Content="+ Cliente" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="75" Click="BtnCadClient_Click"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="11" Grid.Column="0" Margin="6,16,6,15">
+            <Button Content="+ Produto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="BtnCadProduct_Click"/>
+        </StackPanel>
+
     </Grid>
+    
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\ViewWPF\obj\Debug\
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\
 ViewWPF
 none
 false
 DEBUG;TRACE
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\ViewWPF\App.xaml
-21335067793
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\App.xaml
+5298346383
 
-6382980242
+9-928256640
 13738642453
-MainWindow.xaml;View\Teste.xaml;
+MainWindow.xaml;Teste.xaml;View\AddCliente.xaml;View\OutraTela.xaml;View\TelaInicial.xaml;
 
-False
+True
 

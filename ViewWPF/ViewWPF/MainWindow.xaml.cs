@@ -21,5 +21,15 @@ namespace ViewWPF {
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void BtnCadProduct_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCadClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
