@@ -54,17 +54,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Teste.xaml.cs">
-      <DependentUpon>Teste.xaml</DependentUpon>
+    <Compile Include="View\AddClient.xaml.cs">
+      <DependentUpon>AddClient.xaml</DependentUpon>
+	  <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+	  <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+	  <SubType>Code</SubType>
     </Compile>
     <Compile Include="View\AddCliente.xaml.cs">
       <DependentUpon>AddCliente.xaml</DependentUpon>
+	  <SubType>Code</SubType>
     </Compile>
     <Compile Include="View\OutraTela.xaml.cs">
       <DependentUpon>OutraTela.xaml</DependentUpon>
+	  <SubType>Code</SubType>
     </Compile>
     <Compile Include="View\TelaInicial.xaml.cs">
       <DependentUpon>TelaInicial.xaml</DependentUpon>
+	  <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
