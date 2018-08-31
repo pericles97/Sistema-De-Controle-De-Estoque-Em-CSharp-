@@ -1,5 +1,6 @@
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\bin\Debug\Controllers.dll
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\bin\Debug\Controllers.pdb
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\obj\Debug\Controllers.csprojResolveAssemblyReference.cache
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\obj\Debug\Controllers.dll
-C:\Users\1617156\Documents\CSharp\CSharp\ViewWPF\Controllers\obj\Debug\Controllers.pdb
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\Controllers\bin\Debug\Controllers.dll
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\Controllers\bin\Debug\Controllers.pdb
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\Controllers\obj\Debug\Controllers.csprojAssemblyReference.cache
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\Controllers\obj\Debug\Controllers.csproj.CoreCompileInputs.cache
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\Controllers\obj\Debug\Controllers.dll
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\Controllers\obj\Debug\Controllers.pdb
