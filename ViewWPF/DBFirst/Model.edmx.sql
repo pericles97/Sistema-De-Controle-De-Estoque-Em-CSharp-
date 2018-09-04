@@ -2,13 +2,11 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/04/2018 20:28:26
--- Generated from EDMX file: C:\Users\Oliveira\source\repos\SpeedBuy\SpeedBuy\ViewWPF\DBFirst\Model.edmx
+-- Date Created: 09/04/2018 20:48:53
+-- Generated from EDMX file: C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\DBFirst\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
-GO
-USE [master];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +15,32 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ClienteVenda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VendaSet] DROP CONSTRAINT [FK_ClienteVenda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VendaItemVenda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ItemVendaSet] DROP CONSTRAINT [FK_VendaItemVenda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProdutoItemVenda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProdutoSet] DROP CONSTRAINT [FK_ProdutoItemVenda];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClienteSet];
+GO
+IF OBJECT_ID(N'[dbo].[ProdutoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProdutoSet];
+GO
+IF OBJECT_ID(N'[dbo].[VendaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[VendaSet];
+GO
+IF OBJECT_ID(N'[dbo].[ItemVendaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ItemVendaSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables

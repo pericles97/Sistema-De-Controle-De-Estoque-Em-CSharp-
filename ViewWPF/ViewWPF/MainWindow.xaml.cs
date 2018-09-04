@@ -22,7 +22,11 @@ namespace ViewWPF {
         public MainWindow() {
             InitializeComponent();
         }
-
+        /**
+         * 
+         * https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/workflows/database-first
+         * 
+         * **/
 
 
         private void BtnCadClient_Click(object sender, RoutedEventArgs e)
