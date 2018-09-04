@@ -54,3 +54,5 @@ C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\ViewWP
 C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\ViewWPF.Properties.Resources.resources
 C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\ViewWPF.csproj.GenerateResource.cache
 C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\ViewWPF.csproj.CoreCompileInputs.cache
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\View\AddProduct.g.cs
+C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\View\AddProduct.baml

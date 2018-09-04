@@ -58,6 +58,9 @@
       <DependentUpon>AddCliente.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,6 +78,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

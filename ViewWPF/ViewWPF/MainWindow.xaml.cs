@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewWPF.View;
 
 namespace ViewWPF {
     /// <summary>
@@ -22,14 +23,18 @@ namespace ViewWPF {
             InitializeComponent();
         }
 
-        private void BtnCadProduct_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void BtnCadClient_Click(object sender, RoutedEventArgs e)
         {
+            AddCliente addCliente = new AddCliente();
+            addCliente.Show();
+        }
 
+        private void BtnCadProduct_Click(object sender, RoutedEventArgs e)
+        {
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
         }
     }
 }

@@ -7,7 +7,29 @@
         mc:Ignorable="d"
         Title="AddCliente" Height="450" Width="800">
     <Grid>
-        <Label Content="Nome" HorizontalAlignment="Left" Margin="242,76,0,0" VerticalAlignment="Top"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <!--<RowDefinition Height="1*"/>-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="86*"/>
+            <ColumnDefinition Width="336*"/>
+            <ColumnDefinition Width="95*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Nome"  HorizontalAlignment="Left" Margin="242,76,0,0" VerticalAlignment="Top"/>
         <Label Content="CPF" HorizontalAlignment="Left" Margin="242,140,0,0" VerticalAlignment="Top"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="242,214,0,0" VerticalAlignment="Top"/>
         <!--<Grid.Column-->
