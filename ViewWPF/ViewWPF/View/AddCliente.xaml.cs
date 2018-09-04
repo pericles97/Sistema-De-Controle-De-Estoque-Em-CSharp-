@@ -23,5 +23,10 @@ namespace ViewWPF.View
         {
             InitializeComponent();
         }
+
+        private void BtnAddClient_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewWPF.View"
         mc:Ignorable="d"
-        Title="AddProduct" Height="450" Width="800">
+        Title="AddProduct" Height="450" Width="800" WindowState="Maximized">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <!--<RowDefinition Height="1*"/>-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="86*"/> -->
+            <ColumnDefinition Width="335*"/>
+            <!--<ColumnDefinition Width="95*"/>-->
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Cadastrar Produto" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Codigo" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <Button Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddProduct_Click"/>
+
+        </StackPanel>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewWPF.View"
         mc:Ignorable="d"
-        Title="AddCliente" Height="450" Width="800">
+        Title="AddCliente" Height="450" Width="800" WindowState="Maximized">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -24,14 +24,31 @@
             <!--<RowDefinition Height="1*"/>-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="86*"/>
-            <ColumnDefinition Width="336*"/>
-            <ColumnDefinition Width="95*"/>
+            <!--<ColumnDefinition Width="86*"/> -->
+            <ColumnDefinition Width="335*"/>
+            <!--<ColumnDefinition Width="95*"/>-->
         </Grid.ColumnDefinitions>
 
-        <Label Content="Nome"  HorizontalAlignment="Left" Margin="242,76,0,0" VerticalAlignment="Top"/>
-        <Label Content="CPF" HorizontalAlignment="Left" Margin="242,140,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="242,214,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Cadastrar Cliente" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="CPF" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="43,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Endereço" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="14,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <Button Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddClient_Click"/>
+
+        </StackPanel>
         <!--<Grid.Column-->
     </Grid>
 </Window>

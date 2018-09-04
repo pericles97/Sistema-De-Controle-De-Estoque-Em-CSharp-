@@ -29,7 +29,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-            <Label Content="Efetuar Vendas" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+            <Label Content="Efetuar Vendas" HorizontalAlignment="Center" Margin="25,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
