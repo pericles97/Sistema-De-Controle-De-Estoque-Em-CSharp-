@@ -35,18 +35,19 @@
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
             <Label Content="CPF" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="43,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Height="23" Margin="43,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Endereço" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="14,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="23" Margin="14,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-            <Button Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddClient_Click"/>
+            <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddClient_Click"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddClient_Click"/>
 
         </StackPanel>
         <!--<Grid.Column-->
