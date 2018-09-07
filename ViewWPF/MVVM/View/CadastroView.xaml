@@ -1,0 +1,23 @@
+﻿<Window x:Class="MVVM.View.CadastroView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM.View"
+        mc:Ignorable="d"
+        Title="CadastroView" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="299">
+            <Label Content="Cadastrar Atividade" HorizontalAlignment="Center" FontSize="22"/>
+            <Label Content="Título"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Titulo}"/>
+            <Label Content="Descrição"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Descricao}"/>
+            <CheckBox Content="Ativo" IsChecked="{Binding Ativo}"/>
+            <Button Content="Salvar"/>
+            <Button Content="Cancelar"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
