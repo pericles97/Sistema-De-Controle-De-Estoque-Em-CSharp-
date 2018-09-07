@@ -14,7 +14,7 @@
             <Label Content="Descrição"/>
             <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Descricao}"/>
             <CheckBox Content="Ativo" IsChecked="{Binding Ativo}"/>
-            <Button Content="Salvar"/>
+            <Button Content="Salvar" Click="BtnSalvar"/>
             <Button Content="Cancelar"/>
 
         </StackPanel>

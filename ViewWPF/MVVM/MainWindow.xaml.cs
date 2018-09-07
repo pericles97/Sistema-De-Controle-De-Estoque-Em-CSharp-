@@ -26,5 +26,4 @@ namespace MVVM {
             CadastrarAtividade cad = new CadastrarAtividade();
             cad.show();
         }
-    }
 }
