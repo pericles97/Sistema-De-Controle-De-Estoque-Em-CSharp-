@@ -7,23 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBFirst
-{
+namespace DBFirst {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Cliente
-    {
-        public Cliente()
-        {
+
+    public partial class Cliente {
+        public Cliente() {
             this.Venda = new HashSet<Venda>();
         }
-    
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Endereco { get; set; }
         public string Cpf { get; set; }
-    
+
         public virtual ICollection<Venda> Venda { get; set; }
     }
 }
