@@ -1,4 +1,6 @@
-﻿using Controllers.DAL;
+﻿using Controllers.Base;
+using Controllers.DAL;
+using Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Controllers.Controllers {
-    class ClienteController {
+    public class ClienteController : IBaseController<Cliente> {
 
         private Contexto contexto = new Contexto();
 
-        public void Adicionar(Cliente entity) {
+        public void Adicionar(Models.Models.Cliente entity) {
             contexto.Clientes.Add(entity);
             contexto.SaveChanges();
         }
 
-        public void Atualizar(Cliente entity) {
+        public void Atualizar(Models.Models.Cliente entity) {
             contexto.Entry(entity).State =
                 System.Data.Entity.EntityState.Modified;
 

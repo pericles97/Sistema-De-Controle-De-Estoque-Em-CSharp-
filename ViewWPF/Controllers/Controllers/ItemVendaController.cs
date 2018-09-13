@@ -1,5 +1,6 @@
 ﻿using Controllers.Base;
 using Controllers.DAL;
+using Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Controllers.Controllers {
         public void Atualizar(ItemVenda entity) {
             contexto.Entry(entity).State =
                 System.Data.Entity.EntityState.Modified;
-
+            
             contexto.SaveChanges();
         }
 
