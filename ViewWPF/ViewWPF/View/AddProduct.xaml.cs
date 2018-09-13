@@ -12,13 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ViewWPF.View {
+namespace ViewWPF.View
+{
     /// <summary>
     /// Lógica interna para AddProduct.xaml
     /// </summary>
-    public partial class AddProduct : Window {
-        public AddProduct() {
+    public partial class AddProduct : Window
+    {
+        public AddProduct()
+        {
             InitializeComponent();
+        }
+
+        private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

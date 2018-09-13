@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewWPF.View;
 
 namespace ViewWPF {
     /// <summary>
@@ -20,6 +21,24 @@ namespace ViewWPF {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+        }
+        /**
+         * 
+         * https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/workflows/database-first
+         * 
+         * **/
+
+
+        private void BtnCadClient_Click(object sender, RoutedEventArgs e)
+        {
+            AddCliente addCliente = new AddCliente();
+            addCliente.Show();
+        }
+
+        private void BtnCadProduct_Click(object sender, RoutedEventArgs e)
+        {
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
         }
     }
 }

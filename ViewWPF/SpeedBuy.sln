@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{0ED465E5-D9E3-4A1E-85B3-60EF10C726D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFirst", "DBFirst\DBFirst.csproj", "{4F842C06-4CE1-4DF9-A58E-7E8EAC2008D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM", "MVVM\MVVM.csproj", "{BF7EF829-8AE0-406C-9941-068F2B2211B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,19 @@ Global
 		{0ED465E5-D9E3-4A1E-85B3-60EF10C726D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED465E5-D9E3-4A1E-85B3-60EF10C726D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED465E5-D9E3-4A1E-85B3-60EF10C726D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F842C06-4CE1-4DF9-A58E-7E8EAC2008D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F842C06-4CE1-4DF9-A58E-7E8EAC2008D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F842C06-4CE1-4DF9-A58E-7E8EAC2008D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F842C06-4CE1-4DF9-A58E-7E8EAC2008D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF7EF829-8AE0-406C-9941-068F2B2211B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7EF829-8AE0-406C-9941-068F2B2211B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7EF829-8AE0-406C-9941-068F2B2211B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7EF829-8AE0-406C-9941-068F2B2211B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21BB32D8-4DB5-4F04-8297-64B2DD57C6A5}
 	EndGlobalSection
 EndGlobal
