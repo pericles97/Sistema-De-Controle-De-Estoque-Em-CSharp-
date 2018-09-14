@@ -131,6 +131,7 @@
           <Property Name="Nome" Type="String" Nullable="false" />
           <NavigationProperty Name="ItemVenda" Relationship="Model.ProdutoItemVenda" FromRole="Produto" ToRole="ItemVenda" />
           <Property Name="Categoria" Type="String" Nullable="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Venda">
           <Key>

@@ -7,6 +7,7 @@ namespace Models.Models
         [Key]
         public int ProdutoID { get; set; }
         public string Nome { get; set; }
+        public string Codigo { get; set; }
         public string Categoria { get; set; }
 
         public virtual ItemVenda ItemVenda { get; set; }

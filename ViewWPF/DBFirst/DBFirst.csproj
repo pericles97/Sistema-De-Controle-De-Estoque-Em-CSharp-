@@ -122,12 +122,27 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <Content Include="MyDBConection.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controllers\Controllers.csproj">
+      <Project>{0ed465e5-d9e3-4a1e-85b3-60ef10c726d2}</Project>
+      <Name>Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{f62574f9-104b-45b2-94fd-a71a31bf7461}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewWPF\ViewWPF.csproj">
+      <Project>{4a7bb7c4-a45b-4025-a6b7-0b30e9eaa5e6}</Project>
+      <Name>ViewWPF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

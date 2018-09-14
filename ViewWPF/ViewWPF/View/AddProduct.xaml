@@ -40,7 +40,11 @@
             <Label Content="Codigo" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Categoria" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtCategoria" HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
             <Button Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddProduct_Click"/>
 
         </StackPanel>

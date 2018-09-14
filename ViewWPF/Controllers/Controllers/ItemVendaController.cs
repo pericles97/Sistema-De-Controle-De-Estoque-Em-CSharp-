@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Controllers.Controllers {
-    public class ItemVendaVendaController : IBaseController<ItemVenda> {
+    public class ItemVendaVendaController{
 
         private Contexto contexto = new Contexto();
 
@@ -42,7 +42,7 @@ namespace Controllers.Controllers {
             }
         }
 
-        public IList<ItemVenda> ListarPorNome(string nome) {
+        /*public IList<ItemVenda> ListarPorNome(string nome) {
             // LINQ
             //var ItemVendasComNome = from a in contexto.ItemVendas
             //            where a.Nome.ToLower() == nome.ToLower()
@@ -51,9 +51,9 @@ namespace Controllers.Controllers {
             //return ItemVendasComNome.ToList();
 
             // LAMBDA
-            return contexto.ItemVendas
-                .Where(i => i.Nome.ToLower() == nome.ToLower()).ToList();
-        }
+            return contexto.ItemVendas.Where(i => i.Produto. ToLower() == nome.ToLower()).ToList();
+            // select * ItemVenda where ItemVenda.ProdutoID = ID
+        }*/
 
         public IList<ItemVenda> ListarTodos() {
             return contexto.ItemVendas.ToList();

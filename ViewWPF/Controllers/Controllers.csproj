@@ -57,7 +57,12 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{F62574F9-104B-45B2-94FD-A71A31BF7461}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

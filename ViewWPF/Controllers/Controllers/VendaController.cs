@@ -52,7 +52,7 @@ namespace Controllers.Controllers {
 
             // LAMBDA
             return contexto.Vendas
-                .Where(v => v.Nome.ToLower() == nome.ToLower()).ToList();
+                .Where(v => v.Cliente.Nome.ToLower() == nome.ToLower()).ToList();
         }
 
         public IList<Venda> ListarTodos() {

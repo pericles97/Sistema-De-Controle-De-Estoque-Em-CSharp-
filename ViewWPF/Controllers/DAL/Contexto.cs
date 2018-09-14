@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Controllers.DAL {
 
         public DbSet<Cliente> Clientes { get; set; }
 
-        public DbSet<Item> Items { get; set; }
+        public DbSet<ItemVenda> ItemVendas { get; set; }
 
         public DbSet<Produto> Produtos { get; set; }
 
