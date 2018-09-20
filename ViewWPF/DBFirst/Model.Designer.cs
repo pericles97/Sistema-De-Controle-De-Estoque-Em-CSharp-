@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Suporte LPT4\source\repos\CSharp\SpeedBuy\ViewWPF\DBFirst\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Pericles\Documents\WorkspaceVS\Aulas\SpeedBuy\SpeedBuy\ViewWPF\DBFirst\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

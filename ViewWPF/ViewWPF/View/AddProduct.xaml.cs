@@ -44,5 +44,9 @@ namespace ViewWPF.View {
             this.Close();
 
         }
+
+        private void BtnCancelProduct_Click(object sender, RoutedEventArgs e) {
+            this.Close();
+        }
     }
 }
