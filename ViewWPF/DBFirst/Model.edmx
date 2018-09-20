@@ -4,95 +4,100 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ClienteSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Cpf" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ItemVendaSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VendaId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ProdutoSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ItemVenda_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="VendaSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ClienteId" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_ClienteVenda">
-          <End Role="ClienteSet" Type="Self.ClienteSet" Multiplicity="1" />
-          <End Role="VendaSet" Type="Self.VendaSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ClienteSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="VendaSet">
-              <PropertyRef Name="ClienteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProdutoItemVenda">
-          <End Role="ItemVendaSet" Type="Self.ItemVendaSet" Multiplicity="1" />
-          <End Role="ProdutoSet" Type="Self.ProdutoSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ItemVendaSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProdutoSet">
-              <PropertyRef Name="ItemVenda_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VendaItemVenda">
-          <End Role="VendaSet" Type="Self.VendaSet" Multiplicity="1" />
-          <End Role="ItemVendaSet" Type="Self.ItemVendaSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="VendaSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ItemVendaSet">
-              <PropertyRef Name="VendaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="ClienteSet" EntityType="Self.ClienteSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ItemVendaSet" EntityType="Self.ItemVendaSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProdutoSet" EntityType="Self.ProdutoSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VendaSet" EntityType="Self.VendaSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ClienteVenda" Association="Self.FK_ClienteVenda">
-            <End Role="ClienteSet" EntitySet="ClienteSet" />
-            <End Role="VendaSet" EntitySet="VendaSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProdutoItemVenda" Association="Self.FK_ProdutoItemVenda">
-            <End Role="ItemVendaSet" EntitySet="ItemVendaSet" />
-            <End Role="ProdutoSet" EntitySet="ProdutoSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VendaItemVenda" Association="Self.FK_VendaItemVenda">
-            <End Role="VendaSet" EntitySet="VendaSet" />
-            <End Role="ItemVendaSet" EntitySet="ItemVendaSet" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="ClienteSet" EntityType="Model.Store.ClienteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProdutoSet" EntityType="Model.Store.ProdutoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VendaSet" EntityType="Model.Store.VendaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemVendaSet" EntityType="Model.Store.ItemVendaSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ClienteVenda" Association="Model.Store.ClienteVenda">
+      <End Role="Cliente" EntitySet="ClienteSet" />
+      <End Role="Venda" EntitySet="VendaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProdutoItemVenda" Association="Model.Store.ProdutoItemVenda">
+      <End Role="Produto" EntitySet="ProdutoSet" />
+      <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+    </AssociationSet>
+    <AssociationSet Name="VendaItemVenda" Association="Model.Store.VendaItemVenda">
+      <End Role="Venda" EntitySet="VendaSet" />
+      <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ClienteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cpf" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProdutoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Preco" Type="float" Nullable="false" />
+    <Property Name="ItemVenda_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClienteId" Type="int" Nullable="false" />
+    <Property Name="TotalVenda" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemVendaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendaId" Type="int" Nullable="false" />
+    <Property Name="PrecoTotal" Type="float" Nullable="false" />
+    <Property Name="Quantidade" Type="int" Nullable="false" />
+    <Property Name="VendaItemVenda_ItemVenda_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ClienteVenda">
+    <End Role="Cliente" Type="Model.Store.ClienteSet" Multiplicity="1" />
+    <End Role="Venda" Type="Model.Store.VendaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venda">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProdutoItemVenda">
+    <End Role="Produto" Type="Model.Store.ProdutoSet" Multiplicity="*" />
+    <End Role="ItemVenda" Type="Model.Store.ItemVendaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ItemVenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="ItemVenda_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VendaItemVenda">
+    <End Role="Venda" Type="Model.Store.VendaSet" Multiplicity="1" />
+    <End Role="ItemVenda" Type="Model.Store.ItemVendaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemVenda">
+        <PropertyRef Name="VendaItemVenda_ItemVenda_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -102,15 +107,15 @@
           <EntitySet Name="VendaSet" EntityType="Model.Venda" />
           <EntitySet Name="ItemVendaSet" EntityType="Model.ItemVenda" />
           <AssociationSet Name="ClienteVenda" Association="Model.ClienteVenda">
-            <End Role="Cliente" EntitySet="ClienteSet" />
-            <End Role="Venda" EntitySet="VendaSet" />
-          </AssociationSet>
-          <AssociationSet Name="VendaItemVenda" Association="Model.VendaItemVenda">
-            <End Role="Venda" EntitySet="VendaSet" />
-            <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+            <End EntitySet="ClienteSet" Role="Cliente" />
+            <End EntitySet="VendaSet" Role="Venda" />
           </AssociationSet>
           <AssociationSet Name="ProdutoItemVenda" Association="Model.ProdutoItemVenda">
             <End Role="Produto" EntitySet="ProdutoSet" />
+            <End Role="ItemVenda" EntitySet="ItemVendaSet" />
+          </AssociationSet>
+          <AssociationSet Name="VendaItemVenda" Association="Model.VendaItemVenda">
+            <End Role="Venda" EntitySet="VendaSet" />
             <End Role="ItemVenda" EntitySet="ItemVendaSet" />
           </AssociationSet>
         </EntityContainer>
@@ -133,6 +138,7 @@
           <NavigationProperty Name="ItemVenda" Relationship="Model.ProdutoItemVenda" FromRole="Produto" ToRole="ItemVenda" />
           <Property Name="Categoria" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Codigo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Preco" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="Venda">
           <Key>
@@ -142,19 +148,21 @@
           <NavigationProperty Name="Cliente" Relationship="Model.ClienteVenda" FromRole="Venda" ToRole="Cliente" />
           <Property Name="ClienteId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ItemVenda" Relationship="Model.VendaItemVenda" FromRole="Venda" ToRole="ItemVenda" />
+          <Property Name="TotalVenda" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="ItemVenda">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Venda" Relationship="Model.VendaItemVenda" FromRole="ItemVenda" ToRole="Venda" />
           <Property Name="VendaId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Produto" Relationship="Model.ProdutoItemVenda" FromRole="ItemVenda" ToRole="Produto" />
+          <Property Name="PrecoTotal" Type="Double" Nullable="false" />
+          <Property Name="Quantidade" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ClienteVenda">
-          <End Type="Model.Cliente" Role="Cliente" Multiplicity="1" />
-          <End Type="Model.Venda" Role="Venda" Multiplicity="*" />
+          <End Type="Model.Cliente" Multiplicity="1" Role="Cliente" />
+          <End Type="Model.Venda" Multiplicity="*" Role="Venda" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
               <PropertyRef Name="Id" />
@@ -164,21 +172,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="VendaItemVenda">
-          <End Type="Model.Venda" Role="Venda" Multiplicity="1" />
-          <End Type="Model.ItemVenda" Role="ItemVenda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Venda">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ItemVenda">
-              <PropertyRef Name="VendaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="ProdutoItemVenda">
           <End Type="Model.Produto" Role="Produto" Multiplicity="*" />
           <End Type="Model.ItemVenda" Role="ItemVenda" Multiplicity="1" />
+        </Association>
+        <Association Name="VendaItemVenda">
+          <End Type="Model.Venda" Role="Venda" Multiplicity="1" />
+          <End Type="Model.ItemVenda" Role="ItemVenda" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -203,6 +203,7 @@
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Categoria" ColumnName="Categoria" />
           <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Preco" ColumnName="Preco" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -211,6 +212,7 @@
         <MappingFragment StoreEntitySet="VendaSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="TotalVenda" ColumnName="TotalVenda" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -219,6 +221,8 @@
         <MappingFragment StoreEntitySet="ItemVendaSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="VendaId" ColumnName="VendaId" />
+          <ScalarProperty Name="PrecoTotal" ColumnName="PrecoTotal" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -227,6 +231,14 @@
         <ScalarProperty Name="Id" ColumnName="ItemVenda_Id" />
       </EndProperty>
       <EndProperty Name="Produto">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="VendaItemVenda" TypeName="Model.VendaItemVenda" StoreEntitySet="ItemVendaSet">
+      <EndProperty Name="Venda">
+        <ScalarProperty Name="Id" ColumnName="VendaItemVenda_ItemVenda_Id" />
+      </EndProperty>
+      <EndProperty Name="ItemVenda">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

@@ -1,1 +1,1 @@
-select * from Produtoes;
+select * from ItemVendaSet

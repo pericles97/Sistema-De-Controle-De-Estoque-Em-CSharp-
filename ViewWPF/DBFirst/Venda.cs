@@ -21,6 +21,7 @@ namespace DBFirst
     
         public int Id { get; set; }
         public int ClienteId { get; set; }
+        public string TotalVenda { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         public virtual ICollection<ItemVenda> ItemVenda { get; set; }

@@ -21,8 +21,9 @@ namespace DBFirst
     
         public int Id { get; set; }
         public int VendaId { get; set; }
+        public double PrecoTotal { get; set; }
+        public int Quantidade { get; set; }
     
-        public virtual Venda Venda { get; set; }
         public virtual ICollection<Produto> Produto { get; set; }
     }
 }
