@@ -34,20 +34,22 @@
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47"/>
-            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201"/>
+            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Orientation="Horizontal" Margin="257,1,257,0" Width="278">
             <Label Content="Codigo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53"/>
-            <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+            <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="5" Orientation="Horizontal" Margin="257,0" Width="278">
             <Label Content="Categoria" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtCategoria" HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+            <TextBox x:Name="txtCategoria" HorizontalAlignment="Left" Height="23" Margin="25,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="8" Orientation="Horizontal" Margin="352,24,358,0" Grid.RowSpan="2">
             <Button Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddProduct_Click"/>
 
         </StackPanel>
-        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="453,7,0,0" VerticalAlignment="Top" Width="76" Click="BtnAddProduct_Click" Grid.Row="6"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="450,0,0,0" VerticalAlignment="Top" Width="76" Click="BtnAddProduct_Click" Grid.Row="9"/>
+        <Label Content="Preço" HorizontalAlignment="Left" Margin="272,0,0,0" Grid.Row="7" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="336,2,0,0" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
     </Grid>
 </Window>
