@@ -18,9 +18,7 @@ namespace Controllers.Controllers {
         }
 
         public void Atualizar(Models.Models.Cliente entity) {
-            contexto.Entry(entity).State =
-                System.Data.Entity.EntityState.Modified;
-
+            contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
 

@@ -29,16 +29,16 @@ namespace ViewWPF {
          * **/
 
 
-        private void BtnCadClient_Click(object sender, RoutedEventArgs e)
-        {
+        private void BtnCadClient_Click(object sender, RoutedEventArgs e) {
             AddCliente addCliente = new AddCliente();
             addCliente.Show();
+            this.Close();
         }
 
-        private void BtnCadProduct_Click(object sender, RoutedEventArgs e)
-        {
+        private void BtnCadProduct_Click(object sender, RoutedEventArgs e) {
             AddProduct addProduct = new AddProduct();
             addProduct.Show();
+            this.Close();
         }
     }
 }
