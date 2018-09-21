@@ -38,21 +38,21 @@ namespace ViewWPF.View {
                 prod.Categoria = txtCategoria.Text;
                 prod.Preco = txtPreco.Text;
 
-           
-
                 if (txtNome.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo Nome deve ser preenchido!");
                 } else if (txtCodigo.Text.Equals(string.Empty)) {
-                    MessageBox.Show("O campo CPF deve ser preenchido!");
+                    MessageBox.Show("O campo Codigo deve ser preenchido!");
                 } else if (txtCategoria.Text.Equals(string.Empty)) {
-                    MessageBox.Show("O campo Endereço deve ser preenchido!");
+                    MessageBox.Show("O campo Categoria deve ser preenchido!");
+                } else if (txtPreco.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Preço deve ser preenchido!");
                 } else {
 
                     ProdutoController produtosController = new ProdutoController();
                     produtosController.Adicionar(prod);
+                    MessageBox.Show("Produto salvo com sucesso!");
                 }
-
-                MessageBox.Show("Produto salvo com sucesso!");
+                
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao salvar o produto (" + ex.Message + ")");
             }
