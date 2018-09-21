@@ -26,30 +26,97 @@
         <Grid.ColumnDefinitions>
             <!--<ColumnDefinition Width="86*"/> -->
             <ColumnDefinition Width="335*"/>
+            <ColumnDefinition Width="335*"/>
             <!--<ColumnDefinition Width="95*"/>-->
         </Grid.ColumnDefinitions>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Cadastrar Cliente" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
             <Label Content="CPF" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Height="23" Margin="43,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Endereço" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="23" Margin="14,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
             <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddClient_Click"/>
             <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelClient_Click"/>
 
         </StackPanel>
+
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Lista de Clientes" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="btnListar" Content="Listar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnListClient_Click"/>
+
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <!--<Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtListagem" HorizontalAlignment="Left" Height="23" Margin="14,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+            <ListView Name="listview" SelectionMode="Multiple" >
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Name}" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>-->
+
+            <Grid>
+                <!--<ListView Margin="10,10,10,-129" Name="lvDataBinding">
+                    <ListView.View>
+
+                        <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Employee Information">
+
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Nome}" Header="Nome" Width="100"/>
+
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Alterar}" Header="Alterar" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Alterar"></Button>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Deletar}" Header="Deletar" Width="100"/>
+                            
+                            
+
+                        </GridView>
+
+                    </ListView.View>
+                </ListView>-->
+
+                <ListView Canvas.Left="12" Canvas.Top="68" Name="lvDataBinding" Width="253" Margin="0,0,0,-169" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Nome" Width="150" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+
+
+            </Grid>
+            <Button Name="remove" Canvas.Left="197" Canvas.Top="41" Height="21" Width="69" Click="BtnDelete_Click">Remove</Button>
+            <Button Name="alterar" Canvas.Left="197" Canvas.Top="41" Height="21" Width="69" Click="BtnAlterar_Click">Alterar</Button>
+
+        </StackPanel>
+
         <!--<Grid.Column-->
     </Grid>
 </Window>

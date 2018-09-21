@@ -2,6 +2,7 @@
 using Models.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,12 @@ namespace ViewWPF.View {
     public partial class AddCliente : Window {
         public AddCliente() {
             InitializeComponent();
+
+            ClienteController clientesController = new ClienteController();
+            clientesController.ListarTodos();
+
+            lvDataBinding.ItemsSource = clientesController.ListarTodos();
+
         }
 
         private void BtnAddClient_Click(object sender, RoutedEventArgs e) {
@@ -44,8 +51,40 @@ namespace ViewWPF.View {
             this.Close();
         }
 
+
+        private void BtnListClient_Click(object sender, RoutedEventArgs e) {
+            Cliente cli = new Cliente();
+
+
+            ClienteController clientesController = new ClienteController();
+            clientesController.ListarTodos();
+            //txtListagem = clientesController.ListarTodos.;
+
+            List<Cliente> items = new List<Cliente>();
+            /*items.Add(new Cliente() { Nome = "John Doe"});
+            items.Add(new Cliente() { Nome = "Jane Doe" });
+            items.Add(new Cliente() { Nome = "Sammy Doe"});*/
+            lvDataBinding.ItemsSource = clientesController.ListarTodos();
+
+
+
+
+
+        }
+
+
         private void BtnCancelClient_Click(object sender, RoutedEventArgs e) {
             this.Close();
+        }
+
+        private void BtnAlterar_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e) {
+            Cliente cli = (Cliente) lvDataBinding.SelectedItem;
+            ClienteController clientesController = new ClienteController();
+            clientesController.Excluir(cli.ClienteID);
         }
     }
 }
