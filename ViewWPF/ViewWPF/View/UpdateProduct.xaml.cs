@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers.Controllers;
+using Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,38 @@ namespace ViewWPF.View {
     /// Lógica interna para UpdateProduct.xaml
     /// </summary>
     public partial class UpdateProduct : Window {
-        public UpdateProduct() {
+        public UpdateProduct(int id) {
             InitializeComponent();
+
+            Load_Produto(id);
         }
 
+        private void Load_Produto(int id) {
+
+            ProdutoController prodController = new ProdutoController();
+            //Produto produto = new Produto();
+            Produto produto = prodController.BuscarPorID(id);
+
+            txtNome.Text = produto.Nome;
+            txtCodigo.Text = produto.Codigo;
+            txtCategoria.Text = produto.Categoria;
+            txtPreco.Text = produto.Preco;
+
+        }
+
+
         private void BtnUpdateProduct_Click(object sender, RoutedEventArgs e) {
+            Produto prod = new Produto();
+
+            prod.Nome = txtNome.Text;
+            prod.Codigo = txtCodigo.Text;
+            prod.Categoria = txtCategoria.Text;
+            prod.Preco = txtPreco.Text;
+
+            ProdutoController prodController = new ProdutoController();
+            prodController.Adicionar(prod);
+            MessageBox.Show("Produto atualizado com sucesso!");
+
 
         }
 

@@ -29,7 +29,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-            <Label Content="Cadastrar Cliente" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+            <Label Content="ALterar Produto" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">

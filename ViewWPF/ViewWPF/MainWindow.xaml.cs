@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controllers.Controllers;
+using Models.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,11 @@ namespace ViewWPF {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+
+            VendaController vendasController = new VendaController();
+            vendasController.ListarTodos();
+
+
         }
         /**
          * 
@@ -39,6 +46,54 @@ namespace ViewWPF {
             AddProduct addProduct = new AddProduct();
             addProduct.Show();
             this.Close();
+        }
+
+        private void BtnFinalizar_Click(object sender, RoutedEventArgs e) {
+            /*ClienteController clientesController = new ClienteController();
+            clientesController.ListarTodos();
+
+            string sql = "SELECT Cpf from Cliente WHERE Cpf=@Cpf";
+
+            Cliente cliente = new Cliente();
+            cliente.Cpf = 
+            string CpfDB = clientesController.BuscarPorCPF(cpf);*/
+
+            /*var ClientesComNome = from cli in contexto.Clientes
+                        where cli.Nome.ToLower() == nome.ToLower()
+                        select cli;*/
+
+            /*ProdutoController produtosController = new ProdutoController();
+            string ProdDB = produtosController.BuscarPorCOD();*/
+
+
+            try {
+                Venda vend = new Venda();
+
+                vend.Cpf = txtCpf.Text;
+                vend.Codigo = txtCodigo.Text;
+                vend.Qtd = txtQtd.Text;
+
+                if (true) {
+
+                }
+
+                if (txtCpf.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo CPF deve ser preenchido!");
+                } else if (txtCodigo.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Codigo deve ser preenchido!");
+                } else if (txtQtd.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Quantidade deve ser preenchido!");
+                } else {
+                    VendaController vendasController = new VendaController();
+                    vendasController.Adicionar(vend);
+
+                    MessageBox.Show("Venda evetuada com sucesso!");
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Erro ao efetuar a venda (" + ex.Message + ")");
+            }
+
+
         }
     }
 }

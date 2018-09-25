@@ -26,6 +26,10 @@ namespace Controllers.Controllers {
             return contexto.Clientes.Find(id);
         }
 
+        public Cliente BuscarPorCPF(string cpf) {
+            return contexto.Clientes.Find(cpf);
+        }
+
         public void Excluir(int id) {
             Cliente c = BuscarPorID(id);
 
