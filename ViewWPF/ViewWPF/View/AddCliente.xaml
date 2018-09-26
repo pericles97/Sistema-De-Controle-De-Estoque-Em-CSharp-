@@ -36,7 +36,7 @@
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtNome"  HorizontalAlignment="Left" Height="23" Margin="30,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
             <Label Content="CPF" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -53,16 +53,11 @@
         </StackPanel>
 
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Lista de Clientes" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-            <Button x:Name="btnListar" Content="Listar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnListClient_Click"/>
-
-        </StackPanel>
-
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
             <!--<Label Content="Nome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="txtListagem" HorizontalAlignment="Left" Height="23" Margin="14,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
@@ -104,7 +99,8 @@
                 <ListView Canvas.Left="12" Canvas.Top="68" Name="lvDataBinding" Width="253" Margin="0,0,0,-169" >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Nome" Width="150" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
+                            <GridViewColumn Header="Nome" Width="120" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
+                            <GridViewColumn Header="CPF" Width="120" DisplayMemberBinding="{Binding Cpf}"></GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

@@ -28,6 +28,10 @@ namespace Controllers.Controllers {
             return contexto.Produtos.Find(id);
         }
 
+        public Produto BuscarPorCOD(string cod) {
+            return contexto.Produtos.Find(cod);
+        }
+
         public void Excluir(int id) {
             Produto p = BuscarPorID(id);
 

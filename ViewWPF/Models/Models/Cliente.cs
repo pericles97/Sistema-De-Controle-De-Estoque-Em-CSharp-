@@ -13,6 +13,7 @@ namespace Models.Models {
 
         [Key]
         public int ClienteID { get; set; }
+        //[Required]
         public string Nome { get; set; }
         public string Endereco { get; set; }
         public string Cpf { get; set; }

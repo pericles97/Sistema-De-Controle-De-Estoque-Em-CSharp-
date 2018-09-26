@@ -21,6 +21,11 @@ namespace ViewWPF.View {
     public partial class AddProduct : Window {
         public AddProduct() {
             InitializeComponent();
+
+            ProdutoController produtosController = new ProdutoController();
+            produtosController.ListarTodos();
+
+            lvDataBinding.ItemsSource = produtosController.ListarTodos();
         }
 
         private void BtnAddProduct_Click(object sender, RoutedEventArgs e) {
@@ -31,22 +36,58 @@ namespace ViewWPF.View {
                 prod.Nome = txtNome.Text;
                 prod.Codigo = txtCodigo.Text;
                 prod.Categoria = txtCategoria.Text;
+                prod.Preco = txtPreco.Text;
 
-                ProdutoController produtosController = new ProdutoController();
-                produtosController.Adicionar(prod);
+                if (txtNome.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Nome deve ser preenchido!");
+                } else if (txtCodigo.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Codigo deve ser preenchido!");
+                } else if (txtCategoria.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Categoria deve ser preenchido!");
+                } else if (txtPreco.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Preço deve ser preenchido!");
+                } else {
 
-                MessageBox.Show("Produto salvo com sucesso!");
+                    ProdutoController produtosController = new ProdutoController();
+                    produtosController.Adicionar(prod);
+                    MessageBox.Show("Produto salvo com sucesso!");
+                }
+                
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao salvar o produto (" + ex.Message + ")");
             }
-
-
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
             this.Close();
 
         }
 
         private void BtnCancelProduct_Click(object sender, RoutedEventArgs e) {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
+        }
+
+        private void BtnListProduct_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e) {
+            try {
+                Produto prod = (Produto)lvDataBinding.SelectedItem;
+                ProdutoController produtosController = new ProdutoController();
+                produtosController.Excluir(prod.ProdutoID);
+            } catch (Exception ex) {
+                MessageBox.Show("Selecione um Produto");
+            }
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
+            this.Close();
+        }
+
+        private void BtnAlterar_Click(object sender, RoutedEventArgs e) {
+            UpdateProduct updateProduct = new UpdateProduct();
+            updateProduct.Show();
         }
     }
 }

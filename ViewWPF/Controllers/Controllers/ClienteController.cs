@@ -18,14 +18,16 @@ namespace Controllers.Controllers {
         }
 
         public void Atualizar(Models.Models.Cliente entity) {
-            contexto.Entry(entity).State =
-                System.Data.Entity.EntityState.Modified;
-
+            contexto.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
         }
 
         public Cliente BuscarPorID(int id) {
             return contexto.Clientes.Find(id);
+        }
+
+        public Cliente BuscarPorCPF(string cpf) {
+            return contexto.Clientes.Find(cpf);
         }
 
         public void Excluir(int id) {

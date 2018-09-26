@@ -9,7 +9,7 @@ namespace Models.Models
         public string Nome { get; set; }
         public string Codigo { get; set; }
         public string Categoria { get; set; }
-        public double Preco { get; set; }
+        public string Preco { get; set; }
 
         public virtual ItemVenda ItemVenda { get; set; }
     }

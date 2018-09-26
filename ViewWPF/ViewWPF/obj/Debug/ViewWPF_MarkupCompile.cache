@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\
+C:\Users\Pericles\Documents\WorkspaceVS\Aulas\Trab\SpeedBuy\ViewWPF\ViewWPF\obj\Debug\
 ViewWPF
 none
 false
 DEBUG;TRACE
-C:\Users\1617156\Documents\CSharp\Trab\SpeedBuy\ViewWPF\ViewWPF\App.xaml
-41384015294
+C:\Users\Pericles\Documents\WorkspaceVS\Aulas\Trab\SpeedBuy\ViewWPF\ViewWPF\App.xaml
+61803243128
 
-7-1657825606
-181643733988
-MainWindow.xaml;Teste.xaml;View\AddCliente.xaml;View\AddProduct.xaml;
+9-503165753
+18552778410
+MainWindow.xaml;Teste.xaml;View\AddCliente.xaml;View\AddProduct.xaml;View\UpdateCliente.xaml;View\UpdateProduct.xaml;
 
-False
+True
 

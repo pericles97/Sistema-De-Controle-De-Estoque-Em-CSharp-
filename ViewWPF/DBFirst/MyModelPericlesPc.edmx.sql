@@ -85,8 +85,10 @@ GO
 -- Creating table 'VendaSet'
 CREATE TABLE [dbo].[VendaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [ClienteId] int  NOT NULL,
-    [TotalVenda] nvarchar(max)  NOT NULL
+	[Cpf] nvarchar(max)  NOT NULL,
+	[Codigo] nvarchar(max)  NOT NULL,
+	[Qtd] nvarchar(max) NOT NULL,
+    [TotalVenda] nvarchar(max)
 );
 GO
 
@@ -132,20 +134,8 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [ClienteId] in table 'VendaSet'
-ALTER TABLE [dbo].[VendaSet]
-ADD CONSTRAINT [FK_ClienteVenda]
-    FOREIGN KEY ([ClienteId])
-    REFERENCES [dbo].[ClienteSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_ClienteVenda'
-CREATE INDEX [IX_FK_ClienteVenda]
-ON [dbo].[VendaSet]
-    ([ClienteId]);
-GO
+
 
 -- Creating foreign key on [ItemVenda_Id] in table 'ProdutoSet'
 ALTER TABLE [dbo].[ProdutoSet]

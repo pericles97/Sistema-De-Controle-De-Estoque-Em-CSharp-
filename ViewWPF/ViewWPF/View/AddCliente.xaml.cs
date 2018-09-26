@@ -39,16 +39,45 @@ namespace ViewWPF.View {
                 cli.Cpf = txtCpf.Text;
                 cli.Endereco = txtEndereco.Text;
 
-                ClienteController clientesController = new ClienteController();
-                clientesController.Adicionar(cli);
+                if (txtNome.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Nome deve ser preenchido!");
+                }else if (txtCpf.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo CPF deve ser preenchido!");
+                }else if (txtEndereco.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Endereço deve ser preenchido!");
+                } else {
+                    ClienteController clientesController = new ClienteController();
+                    clientesController.Adicionar(cli);
 
-                MessageBox.Show("Cliente salvo com sucesso!");
+                    MessageBox.Show("Cliente salvo com sucesso!");
+                }
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao salvar o cliente (" + ex.Message + ")");
             }
-
-
+            AddCliente addCliente = new AddCliente();
+            addCliente.Show();//addCliente.UpdateLayout();
             this.Close();
+            //custViewSource.View.Refresh();
+        }
+
+        private void BtnAlterar_Click(object sender, RoutedEventArgs e) {
+
+            /*try {
+
+                Cliente cli = (Cliente)lvDataBinding.SelectedItem;
+                ClienteController clientesController = new ClienteController();
+
+                cli.Nome = txtNome.Text;
+                cli.Cpf = txtCpf.Text;
+                cli.Endereco = txtEndereco.Text;
+
+                clientesController.Atualizar(cli);
+            } catch (Exception ex) {
+                MessageBox.Show("Erro ao alterar o cliente (" + ex.Message + ")");
+            }*/
+
+            UpdateCliente updateCliente = new UpdateCliente();
+            updateCliente.Show();
         }
 
 
@@ -66,25 +95,28 @@ namespace ViewWPF.View {
             items.Add(new Cliente() { Nome = "Sammy Doe"});*/
             lvDataBinding.ItemsSource = clientesController.ListarTodos();
 
-
-
-
-
         }
 
 
         private void BtnCancelClient_Click(object sender, RoutedEventArgs e) {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
-        private void BtnAlterar_Click(object sender, RoutedEventArgs e) {
-
-        }
-
         private void BtnDelete_Click(object sender, RoutedEventArgs e) {
-            Cliente cli = (Cliente) lvDataBinding.SelectedItem;
-            ClienteController clientesController = new ClienteController();
-            clientesController.Excluir(cli.ClienteID);
+
+            try {
+                Cliente cli = (Cliente)lvDataBinding.SelectedItem;
+                ClienteController clientesController = new ClienteController();
+                clientesController.Excluir(cli.ClienteID);
+            } catch (Exception ex) {
+                MessageBox.Show("Selecione um Cliente");
+            }
+
+            AddCliente addCliente = new AddCliente();
+            addCliente.Show();
+            this.Close();
         }
     }
 }

@@ -34,18 +34,22 @@
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
             <Label Content="CPF" HorizontalAlignment="Left" Margin="7,7,42,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Codigo" HorizontalAlignment="Left" Margin="7,7,23,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Quantidade" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Valor total" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtTot" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
-            <Button Content="Finalizar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Name="finaliza" Click="BtnFinalizar_Click" Content="Finalizar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75"/>
 
         </StackPanel>
 
