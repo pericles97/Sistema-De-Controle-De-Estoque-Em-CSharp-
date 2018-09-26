@@ -26,6 +26,7 @@ namespace Controllers.Controllers {
 
         public Produto BuscarPorID(int id) {
             return contexto.Produtos.Find(id);
+
         }
 
         public Produto BuscarPorCOD(string cod) {

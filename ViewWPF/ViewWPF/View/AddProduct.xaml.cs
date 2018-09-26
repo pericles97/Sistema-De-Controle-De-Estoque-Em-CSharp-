@@ -19,6 +19,9 @@ namespace ViewWPF.View {
     /// Lógica interna para AddProduct.xaml
     /// </summary>
     public partial class AddProduct : Window {
+
+
+
         public AddProduct() {
             InitializeComponent();
 
@@ -86,8 +89,28 @@ namespace ViewWPF.View {
         }
 
         private void BtnAlterar_Click(object sender, RoutedEventArgs e) {
+            Produto prod = (Produto)lvDataBinding.SelectedItem;
             UpdateProduct updateProduct = new UpdateProduct();
-            updateProduct.Show();
+
+            txtNome.Text = prod.Nome;
+            txtCodigo.Text = prod.Codigo;
+            txtCategoria.Text = prod.Categoria;
+            txtPreco.Text = prod.Preco;
+
+        }
+
+        private void ButtonAlterarSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            Produto prod = (Produto)lvDataBinding.SelectedItem;
+
+            prod.Nome = txtNome.Text;
+            prod.Codigo = txtCodigo.Text;
+            prod.Categoria = txtCategoria.Text;
+            prod.Preco = txtPreco.Text;
+
+            ProdutoController prodController = new ProdutoController();
+            prodController.Atualizar(prod);
+
         }
     }
 }

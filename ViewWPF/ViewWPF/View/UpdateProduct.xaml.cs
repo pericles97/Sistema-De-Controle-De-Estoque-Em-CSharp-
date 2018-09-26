@@ -25,6 +25,10 @@ namespace ViewWPF.View {
             Load_Produto(id);
         }
 
+        public UpdateProduct()
+        {
+        }
+
         private void Load_Produto(int id) {
 
             ProdutoController prodController = new ProdutoController();
