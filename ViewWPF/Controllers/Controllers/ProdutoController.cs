@@ -47,6 +47,19 @@ namespace Controllers.Controllers {
             }
         }
 
+        public IList<Produto> ListarPorCod(string cod) {
+            // LINQ
+            //var ClientesComNome = from a in contexto.Clientes
+            //            where a.Nome.ToLower() == nome.ToLower()
+            //            select a;
+
+            //return ClientesComNome.ToList();
+
+            // LAMBDA
+            return contexto.Produtos
+                .Where(p => p.Codigo.ToLower() == cod.ToLower()).ToList();
+        }
+
         public IList<Produto> ListarPorNome(string nome) {
             // LINQ
             //var ProdutosComNome = from a in contexto.Produtos

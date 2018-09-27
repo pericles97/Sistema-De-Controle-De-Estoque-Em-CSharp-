@@ -44,6 +44,30 @@ namespace Controllers.Controllers {
             }
         }
 
+        /*public IList<Cliente> ListarCpf(string cpf) {
+            var getCpf = from cliente in contexto.Clientes
+                                          where cliente.Cpf == cpff
+                                          select cliente.Cpf;
+
+            foreach (Cliente cetCpf in getCpf) {
+                Console.WriteLine("{0}, {1}", student.Last, student.First);
+            }
+            return contexto.ToList();
+        }*/
+
+        public IList<Cliente> ListarPorCpf(string cpf) {
+            // LINQ
+            //var ClientesComNome = from a in contexto.Clientes
+            //            where a.Nome.ToLower() == nome.ToLower()
+            //            select a;
+
+            //return ClientesComNome.ToList();
+
+            // LAMBDA
+            return contexto.Clientes
+                .Where(c => c.Cpf.ToLower() == cpf.ToLower()).ToList();
+        }
+
         public IList<Cliente> ListarPorNome(string nome) {
             // LINQ
             //var ClientesComNome = from a in contexto.Clientes

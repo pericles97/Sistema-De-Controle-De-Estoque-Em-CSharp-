@@ -2,6 +2,8 @@ SELECT name FROM master.dbo.sysdatabases
 
 DROP DATABASE strConn
 
+DROP table Vendas
+
 select * from Clientes
 
 select * from Produtoes

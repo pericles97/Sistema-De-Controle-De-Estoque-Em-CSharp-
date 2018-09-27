@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAL\Contexto.cs" />
     <Compile Include="View\AddCliente.xaml.cs">
       <DependentUpon>AddCliente.xaml</DependentUpon>
       <SubType>Code</SubType>

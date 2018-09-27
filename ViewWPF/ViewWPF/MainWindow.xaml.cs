@@ -21,6 +21,11 @@ namespace ViewWPF {
     /// Interação lógica para MainWindow.xam
     /// </summary>
     public partial class MainWindow : Window {
+        ClienteController clientesController = new ClienteController();
+        ProdutoController produtoController = new ProdutoController();
+
+        public string cpfObtido;
+        public string codObtido;
         public MainWindow() {
             InitializeComponent();
 
@@ -65,6 +70,7 @@ namespace ViewWPF {
             /*ProdutoController produtosController = new ProdutoController();
             string ProdDB = produtosController.BuscarPorCOD();*/
 
+            
 
             try {
                 Venda vend = new Venda();
@@ -73,9 +79,35 @@ namespace ViewWPF {
                 vend.Codigo = txtCodigo.Text;
                 vend.Qtd = txtQtd.Text;
 
-                if (true) {
+                string cpff = txtCpf.Text;
+                string codd = txtCodigo.Text;
+                
+                //clientesController.BuscarPorCPF(cpff);
+                //MessageBox.Show("Busca por CPF!"+ clientesController.BuscarPorCPF(cpff).ToString());
 
+                //Verifica se existe o CPF cadastrado no banco
+                foreach (Cliente getCpf in clientesController.ListarPorCpf(cpff)) {
+                    if (getCpf.Cpf == cpff.ToString()) {
+                        cpfObtido = getCpf.Cpf.ToString();
+                        //MessageBox.Show("CPF: "+ getCpf.Cpf.ToString());
+                    } else if (getCpf.Cpf != cpff.ToString()) {
+                        //MessageBox.Show("CPF: " + txtCpf.Text + "não existe");
+                    }
                 }
+
+                //Verifica se existe o Codigo do produto cadastrado no banco
+                foreach (Produto getProduto in produtoController.ListarPorCod(codd)) {
+                    if (getProduto.Codigo == codd.ToString()) {
+                        codObtido = getProduto.Codigo.ToString();
+                        //MessageBox.Show("CPF: "+ getCpf.Cpf.ToString());
+                    } else if (getProduto.Codigo != codd.ToString()) {
+                        //MessageBox.Show("CPF: " + txtCpf.Text + "não existe");
+                    }
+                }
+
+                /*if (cpff.Equals(clientesController.BuscarPorCPF(cpff).ToString())) {
+                    MessageBox.Show("Busca por CPF!" + cpff +"Existe");
+                }*/
 
                 if (txtCpf.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo CPF deve ser preenchido!");
@@ -83,17 +115,24 @@ namespace ViewWPF {
                     MessageBox.Show("O campo Codigo deve ser preenchido!");
                 } else if (txtQtd.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo Quantidade deve ser preenchido!");
+                } else if (cpfObtido != txtCpf.Text) {
+                    MessageBox.Show("O CPF " + txtCpf.Text + " não existe");
+                } else if (codObtido != txtCodigo.Text) {
+                    MessageBox.Show("O Codigo " + txtCodigo.Text + " não existe");
                 } else {
                     VendaController vendasController = new VendaController();
                     vendasController.Adicionar(vend);
 
-                    MessageBox.Show("Venda evetuada com sucesso!");
+                    MessageBox.Show("Venda efetuada com sucesso!");
+
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
                 }
+
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao efetuar a venda (" + ex.Message + ")");
             }
-
-
         }
     }
 }
