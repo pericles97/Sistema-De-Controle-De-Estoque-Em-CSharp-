@@ -20,10 +20,12 @@ namespace ViewWPF.View {
     /// Lógica interna para AddCliente.xaml
     /// </summary>
     public partial class AddCliente : Window {
+
+        ClienteController clientesController = new ClienteController();
+
         public AddCliente() {
             InitializeComponent();
 
-            ClienteController clientesController = new ClienteController();
             clientesController.ListarTodos();
 
             lvDataBinding.ItemsSource = clientesController.ListarTodos();
@@ -62,30 +64,26 @@ namespace ViewWPF.View {
 
         private void BtnAlterar_Click(object sender, RoutedEventArgs e) {
 
-            /*try {
-
-                Cliente cli = (Cliente)lvDataBinding.SelectedItem;
-                ClienteController clientesController = new ClienteController();
-
-                cli.Nome = txtNome.Text;
-                cli.Cpf = txtCpf.Text;
-                cli.Endereco = txtEndereco.Text;
-
-                clientesController.Atualizar(cli);
-            } catch (Exception ex) {
-                MessageBox.Show("Erro ao alterar o cliente (" + ex.Message + ")");
-            }*/
-
+            Cliente cli = (Cliente)lvDataBinding.SelectedItem;
             UpdateCliente updateCliente = new UpdateCliente();
-            updateCliente.Show();
+
+            try
+            {
+                txtNome.Text = cli.Nome;
+                txtCpf.Text = cli.Cpf;
+                txtEndereco.Text = cli.Endereco;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione um cliente para alterar");
+            }
+                
         }
 
 
         private void BtnListClient_Click(object sender, RoutedEventArgs e) {
             Cliente cli = new Cliente();
-
-
-            ClienteController clientesController = new ClienteController();
+    
             clientesController.ListarTodos();
             //txtListagem = clientesController.ListarTodos.;
 
@@ -108,7 +106,7 @@ namespace ViewWPF.View {
 
             try {
                 Cliente cli = (Cliente)lvDataBinding.SelectedItem;
-                ClienteController clientesController = new ClienteController();
+
                 clientesController.Excluir(cli.ClienteID);
             } catch (Exception ex) {
                 MessageBox.Show("Selecione um Cliente");
@@ -117,6 +115,29 @@ namespace ViewWPF.View {
             AddCliente addCliente = new AddCliente();
             addCliente.Show();
             this.Close();
+        }
+
+        private void btnAlterarSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            Cliente cli = (Cliente)lvDataBinding.SelectedItem;
+
+            try
+            {
+                cli.Nome = txtNome.Text;
+                cli.Cpf = txtCpf.Text;
+                cli.Endereco = txtEndereco.Text;
+
+                clientesController.Atualizar(cli);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selecione um produto para alterar");
+            }
+
+            AddCliente addCliente = new AddCliente();
+            addCliente.Show();
+            this.Close();
+
         }
     }
 }

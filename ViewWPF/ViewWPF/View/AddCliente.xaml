@@ -49,6 +49,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
             <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddClient_Click"/>
             <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelClient_Click"/>
+            <Button x:Name="btnAlterarSalvar" Content="Alterar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="btnAlterarSalvar_Click"/>
 
         </StackPanel>
 
