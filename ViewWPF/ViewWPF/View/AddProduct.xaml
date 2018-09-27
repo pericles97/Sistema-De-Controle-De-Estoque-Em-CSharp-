@@ -68,8 +68,9 @@
                 <ListView Canvas.Left="12" Canvas.Top="68" Name="lvDataBinding" Width="253" Margin="0,0,0,-169" >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Codigo" Width="125" DisplayMemberBinding="{Binding Codigo}"></GridViewColumn>
-                            <GridViewColumn Header="Nome" Width="125" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
+                            <GridViewColumn Header="Codigo" Width="80" DisplayMemberBinding="{Binding Codigo}"></GridViewColumn>
+                            <GridViewColumn Header="Nome" Width="80" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
+                            <GridViewColumn Header="Preço" Width="80" DisplayMemberBinding="{Binding Preco}"></GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

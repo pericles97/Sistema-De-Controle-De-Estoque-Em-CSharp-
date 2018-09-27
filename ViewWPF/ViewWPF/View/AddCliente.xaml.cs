@@ -43,9 +43,9 @@ namespace ViewWPF.View {
 
                 if (txtNome.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo Nome deve ser preenchido!");
-                }else if (txtCpf.Text.Equals(string.Empty)) {
+                } else if (txtCpf.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo CPF deve ser preenchido!");
-                }else if (txtEndereco.Text.Equals(string.Empty)) {
+                } else if (txtEndereco.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo Endereço deve ser preenchido!");
                 } else {
                     ClienteController clientesController = new ClienteController();
@@ -67,23 +67,20 @@ namespace ViewWPF.View {
             Cliente cli = (Cliente)lvDataBinding.SelectedItem;
             UpdateCliente updateCliente = new UpdateCliente();
 
-            try
-            {
+            try {
                 txtNome.Text = cli.Nome;
                 txtCpf.Text = cli.Cpf;
                 txtEndereco.Text = cli.Endereco;
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 MessageBox.Show("Selecione um cliente para alterar");
             }
-                
+
         }
 
 
         private void BtnListClient_Click(object sender, RoutedEventArgs e) {
             Cliente cli = new Cliente();
-    
+
             clientesController.ListarTodos();
             //txtListagem = clientesController.ListarTodos.;
 
@@ -117,12 +114,10 @@ namespace ViewWPF.View {
             this.Close();
         }
 
-        private void btnAlterarSalvar_Click(object sender, RoutedEventArgs e)
-        {
+        private void btnAlterarSalvar_Click(object sender, RoutedEventArgs e) {
             Cliente cli = (Cliente)lvDataBinding.SelectedItem;
 
-            try
-            {
+            try {
 
                 if (txtNome.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo Nome deve ser preenchido!");
@@ -141,9 +136,7 @@ namespace ViewWPF.View {
                     addCliente.Show();
                     this.Close();
                 }
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 MessageBox.Show("Selecione um produto para alterar");
             }
         }

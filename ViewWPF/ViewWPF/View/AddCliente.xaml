@@ -100,8 +100,9 @@
                 <ListView Canvas.Left="12" Canvas.Top="68" Name="lvDataBinding" Width="253" Margin="0,0,0,-169" >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Nome" Width="120" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
-                            <GridViewColumn Header="CPF" Width="120" DisplayMemberBinding="{Binding Cpf}"></GridViewColumn>
+                            <GridViewColumn Header="Nome" Width="70" DisplayMemberBinding="{Binding Nome}"></GridViewColumn>
+                            <GridViewColumn Header="CPF" Width="70" DisplayMemberBinding="{Binding Cpf}"></GridViewColumn>
+                            <GridViewColumn Header="Endereco" Width="100" DisplayMemberBinding="{Binding Endereco}"></GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

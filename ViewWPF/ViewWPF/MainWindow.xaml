@@ -23,24 +23,24 @@
             <!--<RowDefinition Height="1*"/>-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="86*"/>
+            <ColumnDefinition Width="400*"/>
             <ColumnDefinition Width="336*"/>
             <ColumnDefinition Width="95*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Efetuar Vendas" HorizontalAlignment="Center" Margin="25,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
             <Label Content="CPF" HorizontalAlignment="Left" Margin="7,7,42,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Codigo" HorizontalAlignment="Left" Margin="7,7,23,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
             <Label Content="Quantidade" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>
@@ -49,7 +49,7 @@
             <TextBlock x:Name="txtTot" HorizontalAlignment="Left" Height="23" Margin="7,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </StackPanel>-->
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
-            <Button Name="finaliza" Click="BtnFinalizar_Click" Content="Finalizar" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Name="finaliza" Click="BtnFinalizar_Click" Content="Finalizar Venda" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="100"/>
 
         </StackPanel>
 
@@ -62,6 +62,26 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="11" Grid.Column="0" Margin="6,16,6,15">
             <Button Content="+ Produto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="BtnCadProduct_Click"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Lista de Vendas" HorizontalAlignment="Center" Margin="7,7,42,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Grid>
+                <ListView Canvas.Left="12" Canvas.Top="68" Name="lvDataBinding" Width="253" Margin="0,0,0,-169" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="CPF" Width="50" DisplayMemberBinding="{Binding Cpf}"></GridViewColumn>
+                            <GridViewColumn Header="Codigo" Width="60" DisplayMemberBinding="{Binding Codigo}"></GridViewColumn>
+                            <GridViewColumn Header="Quantidade" Width="70" DisplayMemberBinding="{Binding Qtd}"></GridViewColumn>
+                            <GridViewColumn Header="Total" Width="60" DisplayMemberBinding="{Binding TotalVenda}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
         </StackPanel>
 
     </Grid>

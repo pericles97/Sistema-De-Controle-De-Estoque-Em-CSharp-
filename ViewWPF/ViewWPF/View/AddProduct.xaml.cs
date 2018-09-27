@@ -100,7 +100,7 @@ namespace ViewWPF.View {
                 txtCodigo.Text = prod.Codigo;
                 txtCategoria.Text = prod.Categoria;
                 txtPreco.Text = prod.Preco;
-                codd = txtCodigo.Text;
+                //codd = txtCodigo.Text;
 
             } catch (Exception ex) {
                 MessageBox.Show("Selecione um Produto para alterar");
@@ -115,14 +115,14 @@ namespace ViewWPF.View {
             
 
             //Pegar o preço do produto pelo Codigo
-            foreach (Produto getCodProduto in produtoController.ListarPorCod(codd)) {
+            /*foreach (Produto getCodProduto in produtoController.ListarPorCod(codd)) {
                 if (getCodProduto.Codigo != codd.ToString()) {
                     codObtido = getCodProduto.Codigo.ToString();
                     //MessageBox.Show("CPF: "+ getCpf.Cpf.ToString());
                 } else if (getCodProduto.Codigo != codd.ToString()) {
                     //MessageBox.Show("CPF: " + txtCpf.Text + "não existe");
                 }
-            }
+            }*/
 
             try {
 
@@ -134,8 +134,6 @@ namespace ViewWPF.View {
                     MessageBox.Show("O campo Categoria deve ser preenchido!");
                 } else if (txtPreco.Text.Equals(string.Empty)) {
                     MessageBox.Show("O campo Preço deve ser preenchido!");
-                } else if (codObtido.Equals(txtCodigo.Text)) {
-                    MessageBox.Show("O Codigo " + txtCodigo.Text + " já existe");
                 } else {
                     product.Nome = txtNome.Text;
                     product.Codigo = txtCodigo.Text;

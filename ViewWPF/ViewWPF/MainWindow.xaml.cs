@@ -23,6 +23,7 @@ namespace ViewWPF {
     public partial class MainWindow : Window {
         ClienteController clientesController = new ClienteController();
         ProdutoController produtoController = new ProdutoController();
+        VendaController vendasController = new VendaController();
 
         public string cpfObtido;
         public string codObtido;
@@ -31,9 +32,10 @@ namespace ViewWPF {
         public MainWindow() {
             InitializeComponent();
 
-            VendaController vendasController = new VendaController();
+            //VendaController vendasController = new VendaController();
             vendasController.ListarTodos();
 
+            lvDataBinding.ItemsSource = vendasController.ListarTodos();
 
         }
         /**
@@ -142,7 +144,7 @@ namespace ViewWPF {
                     vendasController.Adicionar(vend);
 
                     MessageBox.Show("Venda efetuada com sucesso!" +
-                        "\n\n" + "O cliente de CFP \"" + txtCpf.Text + "\" realizou uma compra de R$ " + total.ToString("F"));
+                        "\n\n" + "O cliente de CPF \"" + txtCpf.Text + "\" realizou uma compra de R$ " + total.ToString("F"));
 
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
