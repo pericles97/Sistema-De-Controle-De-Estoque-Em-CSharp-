@@ -26,6 +26,8 @@ namespace ViewWPF {
 
         public string cpfObtido;
         public string codObtido;
+        public string precoObtido;
+
         public MainWindow() {
             InitializeComponent();
 
@@ -79,11 +81,27 @@ namespace ViewWPF {
                 vend.Codigo = txtCodigo.Text;
                 vend.Qtd = txtQtd.Text;
 
+
                 string cpff = txtCpf.Text;
                 string codd = txtCodigo.Text;
-                
+
                 //clientesController.BuscarPorCPF(cpff);
                 //MessageBox.Show("Busca por CPF!"+ clientesController.BuscarPorCPF(cpff).ToString());
+
+                //Pegar o preço do produto pelo Codigo
+                foreach (Produto getPrecoProduto in produtoController.ListarPorCod(codd)) {
+                    if (getPrecoProduto.Codigo == codd.ToString()) {
+                        precoObtido = getPrecoProduto.Preco.ToString();
+                        //MessageBox.Show("CPF: "+ getCpf.Cpf.ToString());
+                    } else if (getPrecoProduto.Codigo != codd.ToString()) {
+                        //MessageBox.Show("CPF: " + txtCpf.Text + "não existe");
+                    }
+                }
+
+                double qtdParse = Double.Parse(vend.Qtd);
+                double preco = Double.Parse(precoObtido);
+                double total = qtdParse * preco;
+                vend.TotalVenda = total.ToString();
 
                 //Verifica se existe o CPF cadastrado no banco
                 foreach (Cliente getCpf in clientesController.ListarPorCpf(cpff)) {
@@ -123,7 +141,8 @@ namespace ViewWPF {
                     VendaController vendasController = new VendaController();
                     vendasController.Adicionar(vend);
 
-                    MessageBox.Show("Venda efetuada com sucesso!");
+                    MessageBox.Show("Venda efetuada com sucesso!" +
+                        "\n\n" + "O cliente de CFP \"" + txtCpf.Text + "\" realizou uma compra de R$ " + total.ToString("F"));
 
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
