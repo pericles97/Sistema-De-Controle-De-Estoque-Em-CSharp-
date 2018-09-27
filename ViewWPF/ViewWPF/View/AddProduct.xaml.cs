@@ -20,12 +20,12 @@ namespace ViewWPF.View {
     /// </summary>
     public partial class AddProduct : Window {
 
-
+        ProdutoController produtosController = new ProdutoController();
 
         public AddProduct() {
             InitializeComponent();
 
-            ProdutoController produtosController = new ProdutoController();
+            //ProdutoController produtosController = new ProdutoController();
             produtosController.ListarTodos();
 
             lvDataBinding.ItemsSource = produtosController.ListarTodos();
@@ -55,7 +55,7 @@ namespace ViewWPF.View {
                     produtosController.Adicionar(prod);
                     MessageBox.Show("Produto salvo com sucesso!");
                 }
-                
+
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao salvar o produto (" + ex.Message + ")");
             }
@@ -78,7 +78,6 @@ namespace ViewWPF.View {
         private void BtnDelete_Click(object sender, RoutedEventArgs e) {
             try {
                 Produto prod = (Produto)lvDataBinding.SelectedItem;
-                ProdutoController produtosController = new ProdutoController();
                 produtosController.Excluir(prod.ProdutoID);
             } catch (Exception ex) {
                 MessageBox.Show("Selecione um Produto");
@@ -92,25 +91,37 @@ namespace ViewWPF.View {
             Produto prod = (Produto)lvDataBinding.SelectedItem;
             UpdateProduct updateProduct = new UpdateProduct();
 
-            txtNome.Text = prod.Nome;
-            txtCodigo.Text = prod.Codigo;
-            txtCategoria.Text = prod.Categoria;
-            txtPreco.Text = prod.Preco;
+            try {
+
+                txtNome.Text = prod.Nome;
+                txtCodigo.Text = prod.Codigo;
+                txtCategoria.Text = prod.Categoria;
+                txtPreco.Text = prod.Preco;
+
+            } catch (Exception ex) {
+                MessageBox.Show("Selecione um Produto para alterar");
+            }
+
 
         }
 
-        private void ButtonAlterarSalvar_Click(object sender, RoutedEventArgs e)
-        {
-            Produto prod = (Produto)lvDataBinding.SelectedItem;
+        private void ButtonAlterarSalvar_Click(object sender, RoutedEventArgs e) {
+            Produto product = (Produto)lvDataBinding.SelectedItem;
 
-            prod.Nome = txtNome.Text;
-            prod.Codigo = txtCodigo.Text;
-            prod.Categoria = txtCategoria.Text;
-            prod.Preco = txtPreco.Text;
+            try {
+                product.Nome = txtNome.Text;
+                product.Codigo = txtCodigo.Text;
+                product.Categoria = txtCategoria.Text;
+                product.Preco = txtPreco.Text;
 
-            ProdutoController prodController = new ProdutoController();
-            prodController.Atualizar(prod);
+                produtosController.Atualizar(product);
+            } catch (Exception ex) {
+                MessageBox.Show("Selecione um Produto para alterar");
+            }
 
+            AddProduct addProduct = new AddProduct();
+            addProduct.Show();
+            this.Close();
         }
     }
 }

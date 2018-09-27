@@ -54,6 +54,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8" Orientation="Horizontal" >
             <Button x:Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Center" Margin="7,7,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddProduct_Click"/>
             <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="7,7,0,0" VerticalAlignment="Top" Width="76" Click="BtnCancelProduct_Click" Grid.Row="9"/>
+            <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Center" Margin="7,7,0,0" VerticalAlignment="Top" Width="74"  Click="ButtonAlterarSalvar_Click"/>
 
         </StackPanel>
 
@@ -77,7 +78,6 @@
             <Button Name="alterar" Canvas.Left="197" Canvas.Top="41" Height="21" Width="69" Click="BtnAlterar_Click">Alterar</Button>
 
         </StackPanel>
-        <Button Content="Alterar" HorizontalAlignment="Left" Margin="286,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="74" RenderTransformOrigin="-0.053,-0.125" Click="ButtonAlterarSalvar_Click"/>
 
 
     </Grid>
