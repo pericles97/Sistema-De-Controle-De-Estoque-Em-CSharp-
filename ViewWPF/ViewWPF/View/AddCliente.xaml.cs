@@ -123,21 +123,29 @@ namespace ViewWPF.View {
 
             try
             {
-                cli.Nome = txtNome.Text;
-                cli.Cpf = txtCpf.Text;
-                cli.Endereco = txtEndereco.Text;
 
-                clientesController.Atualizar(cli);
+                if (txtNome.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Nome deve ser preenchido!");
+                } else if (txtCpf.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo CPF deve ser preenchido!");
+                } else if (txtEndereco.Text.Equals(string.Empty)) {
+                    MessageBox.Show("O campo Endereço deve ser preenchido!");
+                } else {
+                    cli.Nome = txtNome.Text;
+                    cli.Cpf = txtCpf.Text;
+                    cli.Endereco = txtEndereco.Text;
+
+                    clientesController.Atualizar(cli);
+
+                    AddCliente addCliente = new AddCliente();
+                    addCliente.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Selecione um produto para alterar");
             }
-
-            AddCliente addCliente = new AddCliente();
-            addCliente.Show();
-            this.Close();
-
         }
     }
 }
